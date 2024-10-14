@@ -34,18 +34,26 @@ import se.deved.menu.UserMenu;
 
 import java.util.Scanner;
 
+// Application -> Menu -> Command
+
 public class Application {
 
+    private MenuManager menuManager;
+
+    public Application() {
+        this.menuManager = new SimpleMenuManager(this);
+    }
 
     public static void main(String[] args) {
         Application application = new Application();
-        // MenuManager
-        // TaskManager
 
-        Menu menu = new UserMenu();
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            menu.tryExecuteCommand(scanner.nextLine());
+            application.getMenuManager().getCurrentMenu().tryExecuteCommand(scanner.nextLine());
         }
+    }
+
+    public MenuManager getMenuManager() {
+        return menuManager;
     }
 }

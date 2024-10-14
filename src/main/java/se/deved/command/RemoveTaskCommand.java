@@ -1,10 +1,11 @@
 package se.deved.command;
 
+import se.deved.Application;
+
 public class RemoveTaskCommand extends Command{
 
-    // TODO: Fix this class
-    public RemoveTaskCommand() {
-        super("remove-task", "");
+    public RemoveTaskCommand(Application application) {
+        super("remove-task", "Remove a task.", application);
     }
 
     @Override
