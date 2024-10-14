@@ -29,8 +29,23 @@ Implementation:
 
  */
 
-public class Main {
-    public static void main(String[] args) {
+import se.deved.menu.Menu;
+import se.deved.menu.UserMenu;
 
+import java.util.Scanner;
+
+public class Application {
+
+
+    public static void main(String[] args) {
+        Application application = new Application();
+        // MenuManager
+        // TaskManager
+
+        Menu menu = new UserMenu();
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            menu.tryExecuteCommand(scanner.nextLine());
+        }
     }
 }
