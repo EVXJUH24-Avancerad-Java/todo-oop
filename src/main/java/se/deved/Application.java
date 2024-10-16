@@ -38,7 +38,13 @@ public class Application {
 
     public Application() {
         this.menuManager = new SimpleMenuManager(this);
-        this.taskManager = new FileTaskManager();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Vill du använda 'list' eller 'file'?");
+        if (scanner.nextLine().equalsIgnoreCase("list")) {
+            this.taskManager = new ListTaskManager();
+        } else {
+            this.taskManager = new FileTaskManager();
+        }
     }
 
     public static void main(String[] args) {
