@@ -29,19 +29,16 @@ Implementation:
 
  */
 
-import se.deved.menu.Menu;
-import se.deved.menu.UserMenu;
-
 import java.util.Scanner;
-
-// Application -> Menu -> Command
 
 public class Application {
 
     private MenuManager menuManager;
+    private TaskManager taskManager;
 
     public Application() {
         this.menuManager = new SimpleMenuManager(this);
+        this.taskManager = new FileTaskManager();
     }
 
     public static void main(String[] args) {
@@ -55,5 +52,9 @@ public class Application {
 
     public MenuManager getMenuManager() {
         return menuManager;
+    }
+
+    public TaskManager getTaskManager() {
+        return taskManager;
     }
 }
